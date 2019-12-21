@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyVet.Common.Models;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 
 namespace MyVet.Common.Services
 {
@@ -103,5 +104,16 @@ namespace MyVet.Common.Services
                 };
             }
         }
+
+        public async Task<bool> CheckConnection(string url)
+        {
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return false;
+            }
+
+            return await CrossConnectivity.Current.IsRemoteReachable(url);
+        }
+
     }
 }

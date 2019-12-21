@@ -26,6 +26,11 @@ namespace MyVet.Prism.ViewModels
             _apiService = apiService;
             Title = "Login";
             IsEnabled = true;
+
+            //TODO: Delete those lines
+            Email = "jzuluaga55@hotmail.com";
+            Password = "123456";
+
         }
 
         public DelegateCommand LoginCommand => _loginCommand ?? (_loginCommand = new DelegateCommand(Login));
@@ -74,6 +79,14 @@ namespace MyVet.Prism.ViewModels
 
             var url = App.Current.Resources["UrlAPI"].ToString();
             var response = await _apiService.GetTokenAsync(url, "/Account", "/CreateToken", request);
+            var connection = await _apiService.CheckConnection(url);
+            if (!connection)
+            {
+                IsEnabled = true;
+                IsRunning = false;
+                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                return;
+            }
 
             if (!response.IsSuccess)
             {

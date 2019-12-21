@@ -1,10 +1,10 @@
 ﻿using Prism;
 using Prism.Ioc;
-using MyVet.Prism.ViewModels;
 using MyVet.Prism.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyVet.Common.Services;
+using MyVet.Prism.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyVet.Prism
@@ -32,6 +32,7 @@ namespace MyVet.Prism
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<PetPage, PetPageViewModel>();
             containerRegistry.RegisterForNavigation<PetsPage, PetsPageViewModel>();
         }
     }

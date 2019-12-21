@@ -2,9 +2,9 @@
 
 namespace MyVet.Prism.Views
 {
-    public partial class PetsPage : ContentPage
+    public partial class PetPage : ContentPage
     {
-        public PetsPage()
+        public PetPage()
         {
             InitializeComponent();
         }
