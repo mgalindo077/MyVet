@@ -1,11 +1,7 @@
 ﻿using MyVet.Common.Models;
 using MyVet.Common.Services;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace MyVet.Prism.ViewModels
 {
@@ -36,16 +32,16 @@ namespace MyVet.Prism.ViewModels
         public DelegateCommand LoginCommand => _loginCommand ?? (_loginCommand = new DelegateCommand(Login));
 
         public string Email { get; set; }
-        public string Password 
-        { 
-            get => _password; 
-            set => SetProperty(ref _password, value); 
+        public string Password
+        {
+            get => _password;
+            set => SetProperty(ref _password, value);
         }
 
-        public bool IsRunning 
-        { 
-            get => _isRunning; 
-            set => SetProperty(ref _isRunning, value); 
+        public bool IsRunning
+        {
+            get => _isRunning;
+            set => SetProperty(ref _isRunning, value);
         }
 
         public bool IsEnabled
@@ -71,14 +67,7 @@ namespace MyVet.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            var request = new TokenRequest
-            {
-                Password = Password,
-                Username = Email
-            };
-
             var url = App.Current.Resources["UrlAPI"].ToString();
-            var response = await _apiService.GetTokenAsync(url, "/Account", "/CreateToken", request);
             var connection = await _apiService.CheckConnection(url);
             if (!connection)
             {
@@ -88,6 +77,13 @@ namespace MyVet.Prism.ViewModels
                 return;
             }
 
+            var request = new TokenRequest
+            {
+                Password = Password,
+                Username = Email
+            };
+
+            var response = await _apiService.GetTokenAsync(url, "/Account", "/CreateToken", request);
             if (!response.IsSuccess)
             {
                 IsEnabled = true;
@@ -97,8 +93,7 @@ namespace MyVet.Prism.ViewModels
                 return;
             }
 
-            var token = (TokenResponse)response.Result;
-
+            var token = response.Result;
             var response2 = await _apiService.GetOwnerByEmailAsync(
                 url,
                 "/api",
@@ -115,7 +110,7 @@ namespace MyVet.Prism.ViewModels
                 return;
             }
 
-            var owner = (OwnerResponse)response2.Result;
+            var owner = response2.Result;
             var parameters = new NavigationParameters
             {
                 { "owner", owner }
