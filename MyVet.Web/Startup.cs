@@ -84,6 +84,7 @@ namespace MyVet.Web
             services.AddScoped<IImageHelper, ImageHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IMailHelper, MailHelper>();
+            services.AddScoped<IAgendaHelper, AgendaHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -203,7 +203,7 @@ namespace MyVet.Web.Controllers
 
             if (owner.Pets.Count > 0)
             {
-                ModelState.AddModelError(string.Empty, "The owner couldn't be removed");
+                //TODO: Message
                 return RedirectToAction(nameof(Index));
             }
 
