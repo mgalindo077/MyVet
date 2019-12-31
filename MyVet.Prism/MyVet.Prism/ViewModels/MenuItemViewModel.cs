@@ -1,4 +1,5 @@
-﻿using MyVet.Common.Models;
+﻿using MyVet.Common.Helpers;
+using MyVet.Common.Models;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -18,8 +19,9 @@ namespace MyVet.Prism.ViewModels
 
         private async void SelectMenu()
         {
-            if (PageName == "Login")
+            if (PageName == "LoginPage")
             {
+                Settings.IsRemembered = false;
                 await _navigationService.NavigateAsync("/NavigationPage/LoginPage");
                 return;
             }
