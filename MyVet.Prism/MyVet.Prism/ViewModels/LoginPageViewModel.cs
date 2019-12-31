@@ -4,6 +4,7 @@ using MyVet.Common.Services;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
+using System;
 
 namespace MyVet.Prism.ViewModels
 {
@@ -15,6 +16,7 @@ namespace MyVet.Prism.ViewModels
         private bool _isRunning;
         private bool _isEnabled;
         private DelegateCommand _loginCommand;
+        private DelegateCommand _registerCommand;
 
         public LoginPageViewModel(
             INavigationService navigationService,
@@ -24,14 +26,13 @@ namespace MyVet.Prism.ViewModels
             _apiService = apiService;
             Title = "Login";
             IsEnabled = true;
-
-            //TODO: Delete those lines
-            Email = "jzuluaga55@hotmail.com";
-            Password = "123456";
-
+            IsRemember = true;
         }
 
         public DelegateCommand LoginCommand => _loginCommand ?? (_loginCommand = new DelegateCommand(Login));
+        public DelegateCommand RegisterCommand => _registerCommand ?? (_registerCommand = new DelegateCommand(Register));
+
+        public bool IsRemember { get; set; }
 
         public string Email { get; set; }
         public string Password
@@ -122,6 +123,11 @@ namespace MyVet.Prism.ViewModels
 
             await _navigationService.NavigateAsync("/VeterinaryMasterDetailPage/NavigationPage/PetsPage");
             Password = string.Empty;
+        }
+
+        private async void Register()
+        {
+            await _navigationService.NavigateAsync("RegisterPage");
         }
     }
 }
