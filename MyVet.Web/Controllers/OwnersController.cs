@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MyVet.Common.Models;
 using MyVet.Web.Data;
 using MyVet.Web.Data.Entities;
 using MyVet.Web.Helpers;
@@ -86,7 +87,9 @@ namespace MyVet.Web.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     PhoneNumber = model.PhoneNumber,
-                    UserName = model.Username
+                    UserName = model.Username,
+                    Latitude = model.Latitude,
+                    Longitude= model.Longitude
                 };
 
                 var response = await _userHelper.AddUserAsync(user, model.Password);
@@ -156,7 +159,9 @@ namespace MyVet.Web.Controllers
                 FirstName = owner.User.FirstName,
                 Id = owner.Id,
                 LastName = owner.User.LastName,
-                PhoneNumber = owner.User.PhoneNumber
+                PhoneNumber = owner.User.PhoneNumber,
+                Latitude = owner.User.Latitude,
+                Longitude = owner.User.Longitude
             };
 
             return View(model);
@@ -177,6 +182,8 @@ namespace MyVet.Web.Controllers
                 owner.User.LastName = model.LastName;
                 owner.User.Address = model.Address;
                 owner.User.PhoneNumber = model.PhoneNumber;
+                owner.User.Latitude = model.Latitude;
+                owner.User.Longitude = model.Longitude;
 
                 await _userHelper.UpdateUserAsync(owner.User);
                 return RedirectToAction(nameof(Index));
@@ -442,6 +449,41 @@ namespace MyVet.Web.Controllers
             _dataContext.Pets.Remove(pet);
             await _dataContext.SaveChangesAsync();
             return RedirectToAction($"{nameof(Details)}/{pet.Owner.Id}");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetOwners()
+        {
+            var owners = await _dataContext.Owners
+                .Include(o => o.User)
+                .Include(o => o.Pets)
+                .ThenInclude(p => p.PetType)
+                .ToListAsync();
+
+            var response = new List<OwnerResponse>(owners.Select(o => new OwnerResponse
+            {
+                Id = o.Id,
+                Latitude = o.User.Latitude,
+                Longitude = o.User.Longitude,
+                FirstName = o.User.FirstName,
+                LastName = o.User.LastName,
+                Address = o.User.Address,
+                Document = o.User.Document,
+                Email = o.User.Email,
+                PhoneNumber = o.User.PhoneNumber,
+                Pets = o.Pets.Select(p => new PetResponse
+                {
+                    Born = p.Born,
+                    Id = p.Id,
+                    ImageUrl = p.ImageFullPath,
+                    Name = p.Name,
+                    Race = p.Race,
+                    Remarks = p.Remarks,
+                    PetType = p.PetType.Name
+                }).ToList()
+            }).ToList());
+
+            return Ok(response);
         }
     }
 }
