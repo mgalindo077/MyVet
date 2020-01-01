@@ -83,12 +83,20 @@ namespace MyVet.Prism.Helpers
 
         public static string Edited => Resource.Edited;
 
+        public static string EditPet => Resource.EditPet;
+
         public static string NameError => Resource.NameError;
+
+        public static string NewPet => Resource.NewPet;
 
         public static string RaceError => Resource.RaceError;
 
         public static string PetTypeError => Resource.PetTypeError;
 
         public static string Ok => Resource.Ok;
+
+        public static string NoInternet => Resource.NoInternet;
+
+        public static string AskSupport => Resource.AskSupport;
     }
 }

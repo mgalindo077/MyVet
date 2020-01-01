@@ -87,7 +87,7 @@ namespace MyVet.Prism.ViewModels
                 IsRunning = false;
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error, 
-                    "Check the internet connection.", 
+                    Languages.NoInternet, 
                     Languages.Accept);
                 return;
             }
@@ -130,7 +130,7 @@ namespace MyVet.Prism.ViewModels
                 IsRunning = false;
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error, 
-                    "This user have a big problem, call support.", 
+                    Languages.AskSupport, 
                     Languages.Accept);
                 return;
             }

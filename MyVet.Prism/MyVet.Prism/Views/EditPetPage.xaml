@@ -110,34 +110,34 @@
                 </StackLayout>
 
                 <busyindicator:SfBusyIndicator  
-                AnimationType="Gear"
-                AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
-                AbsoluteLayout.LayoutFlags="All"
-                BackgroundColor="{StaticResource colorDanger}"
-                HorizontalOptions="Center"
-                TextColor="{StaticResource colorFontInverse}"
-                IsVisible="{Binding IsRunning}"
-                Title="{i18n:Translate Saving}"
-                VerticalOptions="Center"
-                ViewBoxWidth="80"
-                ViewBoxHeight="80" />
+                    AnimationType="Gear"
+                    AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="{StaticResource colorDanger}"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource colorFontInverse}"
+                    IsVisible="{Binding IsRunning}"
+                    Title="{i18n:Translate Saving}"
+                    VerticalOptions="Center"
+                    ViewBoxWidth="80"
+                    ViewBoxHeight="80" />
             </AbsoluteLayout>
         </ScrollView>
         <StackLayout
-        Orientation="Horizontal"
-        VerticalOptions="EndAndExpand">
+            Orientation="Horizontal"
+            VerticalOptions="EndAndExpand">
 
             <Button
-            Command="{Binding SaveCommand}"
-            IsEnabled="{Binding IsEnabled}"
-            Text="{i18n:Translate Save}"/>
+                Command="{Binding SaveCommand}"
+                IsEnabled="{Binding IsEnabled}"
+                Text="{i18n:Translate Save}"/>
 
             <Button
-            Command="{Binding DeleteCommand}"
-            IsEnabled="{Binding IsEnabled}"
-            IsVisible="{Binding IsEdit}"
-            Style="{StaticResource dangerButton}"
-            Text="{i18n:Translate Delete}"/>
+                Command="{Binding DeleteCommand}"
+                IsEnabled="{Binding IsEnabled}"
+                IsVisible="{Binding IsEdit}"
+                Style="{StaticResource dangerButton}"
+                Text="{i18n:Translate Delete}"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

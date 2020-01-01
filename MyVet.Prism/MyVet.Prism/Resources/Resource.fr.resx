@@ -276,4 +276,13 @@
   <data name="CreateEditPetConfirm" xml:space="preserve">
     <value>L&amp;#39;animal a réussi {0} avec succès!</value>
   </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Vérifiez la connexion Internet</value>
+  </data>
+  <data name="AskSupport" xml:space="preserve">
+    <value>Nous avons un gros problème. /Nous sommes aux prises avec un énorme problème.</value>
+  </data>
+  <data name="NewPet" xml:space="preserve">
+    <value>Ajouter un nouveau animal</value>
+  </data>
 </root>

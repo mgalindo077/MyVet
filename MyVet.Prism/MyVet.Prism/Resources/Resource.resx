@@ -276,4 +276,13 @@
   <data name="CreateEditPetConfirm" xml:space="preserve">
     <value>The pet was {0} succesfully</value>
   </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Check the internet connection</value>
+  </data>
+  <data name="AskSupport" xml:space="preserve">
+    <value>This user have a big problem, call support</value>
+  </data>
+  <data name="NewPet" xml:space="preserve">
+    <value>New Pet</value>
+  </data>
 </root>

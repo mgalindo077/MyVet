@@ -94,14 +94,14 @@ namespace MyVet.Prism.ViewModels
                 Pet = parameters.GetValue<PetResponse>("pet");
                 ImageSource = Pet.ImageUrl;
                 IsEdit = true;
-                Title = "Edit Pet";
+                Title = Languages.EditPet;
             }
             else
             {
                 Pet = new PetResponse { Born = DateTime.Today };
                 ImageSource = "noimage";
                 IsEdit = false;
-                Title = "New Pet";
+                Title = Languages.NewPet;
             }
             LoadPetTypesAsync();
         }
@@ -118,9 +118,9 @@ namespace MyVet.Prism.ViewModels
                 IsEnabled = true;
                 IsRunning = false;
                 await App.Current.MainPage.DisplayAlert(
-                    "Error", 
-                    "Check the internet connection.", 
-                    "Accept");
+                    Languages.Error, 
+                    Languages.NoInternet, 
+                    Languages.Accept);
                 await _navigationService.GoBackAsync();
                 return;
             }
@@ -139,9 +139,9 @@ namespace MyVet.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error", 
+                    Languages.Error, 
                     response.Message, 
-                    "Accept");
+                    Languages.Accept);
                 await _navigationService.GoBackAsync();
                 return;
             }
