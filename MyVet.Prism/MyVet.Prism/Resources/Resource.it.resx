@@ -159,4 +159,121 @@
   <data name="LoginError" xml:space="preserve">
     <value>E-mail o password errati</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="EditPet" xml:space="preserve">
+    <value>Modificare Animale</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Tocca sull&amp;#39;immagine per aggiornare!</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>(Il tuo) Nome!</value>
+  </data>
+  <data name="NameError" xml:space="preserve">
+    <value>Devi inserire il nome dell&amp;#39;animale domestico!</value>
+  </data>
+  <data name="NamePlaceHolder" xml:space="preserve">
+    <value>Inserire il nome</value>
+  </data>
+  <data name="Race" xml:space="preserve">
+    <value>Razza</value>
+  </data>
+  <data name="RaceError" xml:space="preserve">
+    <value>Devi inserire la razza dell&amp;#39;animale domestico!</value>
+  </data>
+  <data name="RacePlaceHolder" xml:space="preserve">
+    <value>Inserisci la razza dell&amp;#39;animale domestico!</value>
+  </data>
+  <data name="PetType" xml:space="preserve">
+    <value>Tipo di animale</value>
+  </data>
+  <data name="PetTypeError" xml:space="preserve">
+    <value>Devi selezionare un tipo di animale domestico!</value>
+  </data>
+  <data name="PetTypePlaceHolder" xml:space="preserve">
+    <value>Seleziona il tipo di animale</value>
+  </data>
+  <data name="Born" xml:space="preserve">
+    <value>L&amp;#39;animale è nato!</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Commenti!</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Okay.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefono</value>
+  </data>
+  <data name="PhoneError" xml:space="preserve">
+    <value>Inserisci un numero di telefono&amp;#x0D;</value>
+  </data>
+  <data name="PhonePlaceHolder" xml:space="preserve">
+    <value>Inserisci il tuo numero di telefono</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="FirstNameError" xml:space="preserve">
+    <value>Devi immettere il tuo nome</value>
+  </data>
+  <data name="FirstNamePlaceHolder" xml:space="preserve">
+    <value>Inserisci il tuo nome</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Cognome</value>
+  </data>
+  <data name="LastNameError" xml:space="preserve">
+    <value>Devi inserire il tuo cognome</value>
+  </data>
+  <data name="LastNamePlaceHolder" xml:space="preserve">
+    <value>Inserisci il tuo cognome</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Indirizzo</value>
+  </data>
+  <data name="AddressError" xml:space="preserve">
+    <value>Inserisci il tuo indirizzo</value>
+  </data>
+  <data name="AddressPlaceHolder" xml:space="preserve">
+    <value>Inserisci il tuo indirizzo</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="DocumentError" xml:space="preserve">
+    <value>Devi inserire il tuo documento!</value>
+  </data>
+  <data name="DocumentPlaceHolder" xml:space="preserve">
+    <value>Inserisci il tuo documento!</value>
+  </data>
+  <data name="PetName" xml:space="preserve">
+    <value>Nome dell'animale</value>
+  </data>
+  <data name="PetNameError" xml:space="preserve">
+    <value>Devi inserire il nome dell&amp;#39;animale!</value>
+  </data>
+  <data name="PetNamePlaceHolder" xml:space="preserve">
+    <value>Inserisci il nome dell&amp;#39;animale!</value>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Funzionamento</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Salvataggio in corso...</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Creato</value>
+  </data>
+  <data name="Edited" xml:space="preserve">
+    <value>Modificato</value>
+  </data>
+  <data name="CreateEditPetConfirm" xml:space="preserve">
+    <value>L&amp;#39;animale era {0} riuscito!</value>
+  </data>
 </root>

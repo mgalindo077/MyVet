@@ -159,4 +159,121 @@
   <data name="LoginError" xml:space="preserve">
     <value>Email or password incorrect</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditPet" xml:space="preserve">
+    <value>Edit Pet</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Tap on image to update</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NameError" xml:space="preserve">
+    <value>You must enter the pets name</value>
+  </data>
+  <data name="NamePlaceHolder" xml:space="preserve">
+    <value>Enter the pet name</value>
+  </data>
+  <data name="Race" xml:space="preserve">
+    <value>Breed</value>
+  </data>
+  <data name="RaceError" xml:space="preserve">
+    <value>You must enter the pet's breed</value>
+  </data>
+  <data name="RacePlaceHolder" xml:space="preserve">
+    <value>Enter the pet's breed</value>
+  </data>
+  <data name="PetType" xml:space="preserve">
+    <value>Pet Type</value>
+  </data>
+  <data name="PetTypeError" xml:space="preserve">
+    <value>You must select a pet type</value>
+  </data>
+  <data name="PetTypePlaceHolder" xml:space="preserve">
+    <value>Select the pet type</value>
+  </data>
+  <data name="Born" xml:space="preserve">
+    <value>Pet's born</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneError" xml:space="preserve">
+    <value>You must enter a phone number</value>
+  </data>
+  <data name="PhonePlaceHolder" xml:space="preserve">
+    <value>Enter your phone number</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="FirstNameError" xml:space="preserve">
+    <value>You must enter your first name</value>
+  </data>
+  <data name="FirstNamePlaceHolder" xml:space="preserve">
+    <value>Enter your first name</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="LastNameError" xml:space="preserve">
+    <value>You must enter your last name</value>
+  </data>
+  <data name="LastNamePlaceHolder" xml:space="preserve">
+    <value>Enter your last name</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AddressError" xml:space="preserve">
+    <value>You must enter your address</value>
+  </data>
+  <data name="AddressPlaceHolder" xml:space="preserve">
+    <value>Enter your address</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="DocumentError" xml:space="preserve">
+    <value>You must enter your document</value>
+  </data>
+  <data name="DocumentPlaceHolder" xml:space="preserve">
+    <value>Enter your document</value>
+  </data>
+  <data name="PetName" xml:space="preserve">
+    <value>Pet Name</value>
+  </data>
+  <data name="PetNameError" xml:space="preserve">
+    <value>Your must enter the pet's name</value>
+  </data>
+  <data name="PetNamePlaceHolder" xml:space="preserve">
+    <value>Enter the pet's name</value>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Working...</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Saving...</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="Edited" xml:space="preserve">
+    <value>Edited</value>
+  </data>
+  <data name="CreateEditPetConfirm" xml:space="preserve">
+    <value>The pet was {0} succesfully</value>
+  </data>
 </root>

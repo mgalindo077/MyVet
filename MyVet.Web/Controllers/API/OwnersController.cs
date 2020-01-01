@@ -43,6 +43,7 @@ namespace MyVet.Web.Controllers.API
 
             var response = new OwnerResponse
             {
+                Id = owner.Id,
                 FirstName = owner.User.FirstName,
                 LastName = owner.User.LastName,
                 Address = owner.User.Address,
