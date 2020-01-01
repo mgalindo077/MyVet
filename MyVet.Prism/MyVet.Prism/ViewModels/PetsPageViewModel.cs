@@ -1,6 +1,7 @@
 ﻿using MyVet.Common.Helpers;
 using MyVet.Common.Models;
 using Newtonsoft.Json;
+using Prism.Commands;
 using Prism.Navigation;
 using System;
 using System.Collections.ObjectModel;
@@ -15,6 +16,9 @@ namespace MyVet.Prism.ViewModels
         private TokenResponse _token;
         private ObservableCollection<PetItemViewModel> _pets;
         private bool _isRefreshing;
+        private DelegateCommand _addPetCommand;
+
+        public DelegateCommand AddPetCommand => _addPetCommand ?? (_addPetCommand = new DelegateCommand(AddPet));
 
         public PetsPageViewModel(
             INavigationService navigationService) : base(navigationService)
@@ -52,5 +56,11 @@ namespace MyVet.Prism.ViewModels
                 Remarks = p.Remarks
             }).ToList());
         }
+
+        private async void AddPet()
+        {
+            await _navigationService.NavigateAsync("EditPetPage");
+        }
+
     }
 }
