@@ -1,14 +1,14 @@
-﻿using Prism;
-using Prism.Ioc;
-using MyVet.Prism.Views;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using MyVet.Common.Helpers;
+using MyVet.Common.Models;
 using MyVet.Common.Services;
 using MyVet.Prism.ViewModels;
+using MyVet.Prism.Views;
 using Newtonsoft.Json;
-using MyVet.Common.Models;
-using MyVet.Common.Helpers;
+using Prism;
+using Prism.Ioc;
 using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyVet.Prism
@@ -55,10 +55,10 @@ namespace MyVet.Prism
             containerRegistry.RegisterForNavigation<VeterinaryMasterDetailPage, VeterinaryMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<AgendaPage, AgendaPageViewModel>();
             containerRegistry.RegisterForNavigation<MapPage, MapPageViewModel>();
-            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
             containerRegistry.RegisterForNavigation<EditPetPage, EditPetPageViewModel>();
         }
     }

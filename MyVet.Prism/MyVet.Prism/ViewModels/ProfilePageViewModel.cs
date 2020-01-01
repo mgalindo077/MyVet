@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyVet.Prism.ViewModels
 {
-    public class ProfileViewModel : ViewModelBase
+    public class ProfilePageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
@@ -19,7 +19,7 @@ namespace MyVet.Prism.ViewModels
         private DelegateCommand _saveCommand;
         private DelegateCommand _changePasswordCommand;
 
-        public ProfileViewModel(
+        public ProfilePageViewModel(
             INavigationService navigationService,
             IApiService apiService) : base(navigationService)
         {
