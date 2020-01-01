@@ -1,6 +1,7 @@
 ﻿using MyVet.Common.Helpers;
 using MyVet.Common.Models;
 using MyVet.Common.Services;
+using MyVet.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
@@ -25,7 +26,7 @@ namespace MyVet.Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Login";
+            Title = Languages.Login;
             IsEnabled = true;
             IsRemember = true;
         }
@@ -59,13 +60,19 @@ namespace MyVet.Prism.ViewModels
         {
             if (string.IsNullOrEmpty(Email))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter an email.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    Languages.EmailError,
+                    Languages.Accept);
                 return;
             }
 
             if (string.IsNullOrEmpty(Password))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a password.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    Languages.PasswordError, 
+                    Languages.Accept);
                 return;
             }
 
@@ -78,7 +85,10 @@ namespace MyVet.Prism.ViewModels
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    "Check the internet connection.", 
+                    Languages.Accept);
                 return;
             }
 
@@ -88,12 +98,19 @@ namespace MyVet.Prism.ViewModels
                 Username = Email
             };
 
-            var response = await _apiService.GetTokenAsync(url, "/Account", "/CreateToken", request);
+            var response = await _apiService.GetTokenAsync(
+                url, 
+                "/Account", 
+                "/CreateToken", 
+                request);
             if (!response.IsSuccess)
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Error", "User or password incorrect.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    Languages.LoginError, 
+                    Languages.Accept);
                 Password = string.Empty;
                 return;
             }
@@ -111,7 +128,10 @@ namespace MyVet.Prism.ViewModels
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Error", "This user have a big problem, call support.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    "This user have a big problem, call support.", 
+                    Languages.Accept);
                 return;
             }
 
