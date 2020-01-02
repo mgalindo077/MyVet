@@ -58,7 +58,7 @@ namespace MyVet.Prism.ViewModels
         }
 
 
-        public static PetsPageViewModel Getinstance()
+        public static PetsPageViewModel GetInstance()
         {
             return _instance;
         }

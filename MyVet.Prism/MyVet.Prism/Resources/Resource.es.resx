@@ -285,4 +285,16 @@
   <data name="NewPet" xml:space="preserve">
     <value>Nueva mascota</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="QuestionToDeletePet" xml:space="preserve">
+    <value>¿Estás seguro de eliminar esta mascota?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>&amp;Sí</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
 </root>

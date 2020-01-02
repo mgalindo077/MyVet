@@ -98,5 +98,13 @@ namespace MyVet.Prism.Helpers
         public static string NoInternet => Resource.NoInternet;
 
         public static string AskSupport => Resource.AskSupport;
+
+        public static string Confirm => Resource.Confirm;
+
+        public static string Yes => Resource.Yes;
+
+        public static string No => Resource.No;
+
+        public static string QuestionToDeletePet => Resource.QuestionToDeletePet;
     }
 }

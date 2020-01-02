@@ -72,5 +72,13 @@ namespace MyVet.Common.Services
             T model,
             string tokenType,
             string accessToken);
+
+        Task<Response<object>> DeleteAsync(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            int id,
+            string tokenType,
+            string accessToken);
     }
 }
